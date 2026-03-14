@@ -102,6 +102,7 @@ export async function fetchRemoteMedia(options: FetchMediaOptions): Promise<Fetc
       withStrictGuardedFetchMode({
         url,
         fetchImpl,
+        pinDns: !url.includes("api.telegram.org"),
         init: requestInit,
         maxRedirects,
         policy: ssrfPolicy,
